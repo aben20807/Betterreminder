@@ -119,7 +119,7 @@ void inline MainWindow::applyLanguage()
 {
     if(languageMode == "zhTW"){
         //qDebug() << "change to 繁體中文" << endl;
-        translator->load(QString("./res/language/zh_TW"));
+//        translator->load(QString("./res/language/zh_TW"));
 
 //        ui->retranslateUi(this);
         ui->action_zhTW->setChecked(true);
@@ -251,17 +251,7 @@ void inline MainWindow::displayBatteryThings(int const batteryLevel, QString con
     else{
         ui->label_batteryLevel_2->setStyleSheet("color: rgb(0, 0, 0)");//black
     }
-    if(languageMode == "enUS"){
-        ui->label_batteryStatus->setText(batteryStatus);
-    }
-    else if(languageMode == "zhTW"){
-        if(batteryStatus == "Battery using"){
-            ui->label_batteryStatus->setText("電池使用中");
-        }
-        else if(batteryStatus == "AC charging"){
-            ui->label_batteryStatus->setText("正在充電");
-        }
-    }
+    ui->label_batteryStatus->setText(batteryStatus);
 
     if(battery->getBatteryStatus() == "AC charging"){//change color of progressBar
         ui->progressBar->setStyleSheet("QProgressBar {border: 1px solid black;text-align: top;"
@@ -371,23 +361,23 @@ void MainWindow::detectActionAndDo(int const &_numOfAction)
 {
     //qDebug() << _numOfAction << doOnce[_numOfAction];
     int _nowLevel = battery->getBatteryLevel();
-    if(_condition[_numOfAction] == "If level >"){
+    if(_condition[_numOfAction] == "If level >" || _condition[_numOfAction] == "如果電量 >"){
         if(_nowLevel >= _level[_numOfAction] && doOnce[_numOfAction] == true){
             doOnce[_numOfAction] = false;
-            if(_action[_numOfAction] == "Remind"){
+            if(_action[_numOfAction] == "Remind" || _action[_numOfAction] == "提醒"){
                 writeLog("Remind When > " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("RemindMorethan", _level[_numOfAction], this);
                 //qDebug() << "Do Remind";
             }
-            else if(_action[_numOfAction] == "Shut down"){
+            else if(_action[_numOfAction] == "Shut down" || _action[_numOfAction] == "關機"){
                 writeLog("Shutdown When > " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Shutdown", _level[_numOfAction], this);
             }
-            else if(_action[_numOfAction] == "Sleep"){
+            else if(_action[_numOfAction] == "Sleep" || _action[_numOfAction] == "睡眠"){
                 writeLog("Sleep When > " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Sleep", _level[_numOfAction], this);
             }
-            else if(_action[_numOfAction] == "Hibernate"){
+            else if(_action[_numOfAction] == "Hibernate" || _action[_numOfAction] == "休眠"){
                 writeLog("Hibernate When > " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Hibernate", _level[_numOfAction], this);
             }
@@ -396,23 +386,23 @@ void MainWindow::detectActionAndDo(int const &_numOfAction)
             doOnce[_numOfAction] = true;
         }
     }
-    else if(_condition[_numOfAction] == "If level <"){
+    else if(_condition[_numOfAction] == "If level <" || _condition[_numOfAction] == "如果電量 <"){
         if(_nowLevel <= _level[_numOfAction] && doOnce[_numOfAction] == true){
             doOnce[_numOfAction] = false;
-            if(_action[_numOfAction] == "Remind"){
+            if(_action[_numOfAction] == "Remind" || _action[_numOfAction] == "提醒"){
                 writeLog("Remind When < " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("RemindLessthan", _level[_numOfAction], this);
                 //qDebug() << "Do Remind";
             }
-            else if(_action[_numOfAction] == "Shut down"){
+            else if(_action[_numOfAction] == "Shut down" || _action[_numOfAction] == "關機"){
                 writeLog("Shutdown When < " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Shutdown", _level[_numOfAction], this);
             }
-            else if(_action[_numOfAction] == "Sleep"){
+            else if(_action[_numOfAction] == "Sleep" || _action[_numOfAction] == "睡眠"){
                 writeLog("Sleep When < " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Sleep", _level[_numOfAction], this);
             }
-            else if(_action[_numOfAction] == "Hibernate"){
+            else if(_action[_numOfAction] == "Hibernate" || _action[_numOfAction] == "休眠"){
                 writeLog("Hibernate When < " + QString::number(_level[_numOfAction]) + "%");
                 cmdprocess->doAction("Hibernate", _level[_numOfAction], this);
             }

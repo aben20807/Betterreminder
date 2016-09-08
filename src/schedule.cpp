@@ -170,11 +170,11 @@ void Schedule::readDataFromDatabase()
                 ui->lEdit_1->setText(qry.value(2).toString());
                 ui->comboBox_action1->setCurrentText(qry.value(3).toString());
             }
-            else if(conn.getLanguageMode() == "zhTW"){
-                ui->comboBox_condition1->setCurrentText(translateCondition(qry.value(1).toString()));
-                ui->lEdit_1->setText(qry.value(2).toString());
-                ui->comboBox_action1->setCurrentText(translateAction(qry.value(3).toString()));
-            }
+//            else if(conn.getLanguageMode() == "zhTW"){
+//                ui->comboBox_condition1->setCurrentText(translateCondition(qry.value(1).toString()));
+//                ui->lEdit_1->setText(qry.value(2).toString());
+//                ui->comboBox_action1->setCurrentText(translateAction(qry.value(3).toString()));
+//            }
         }
     }
     else{
@@ -189,11 +189,11 @@ void Schedule::readDataFromDatabase()
                 ui->lEdit_2->setText(qry.value(2).toString());
                 ui->comboBox_action2->setCurrentText(qry.value(3).toString());
             }
-            else if(conn.getLanguageMode() == "zhTW"){
-                ui->comboBox_condition2->setCurrentText(translateCondition(qry.value(1).toString()));
-                ui->lEdit_2->setText(qry.value(2).toString());
-                ui->comboBox_action2->setCurrentText(translateAction(qry.value(3).toString()));
-            }
+//            else if(conn.getLanguageMode() == "zhTW"){
+//                ui->comboBox_condition2->setCurrentText(translateCondition(qry.value(1).toString()));
+//                ui->lEdit_2->setText(qry.value(2).toString());
+//                ui->comboBox_action2->setCurrentText(translateAction(qry.value(3).toString()));
+//            }
         }
     }
     else{
@@ -208,11 +208,11 @@ void Schedule::readDataFromDatabase()
                 ui->lEdit_3->setText(qry.value(2).toString());
                 ui->comboBox_action3->setCurrentText(qry.value(3).toString());
             }
-            else if(conn.getLanguageMode() == "zhTW"){
-                ui->comboBox_condition3->setCurrentText(translateCondition(qry.value(1).toString()));
-                ui->lEdit_3->setText(qry.value(2).toString());
-                ui->comboBox_action3->setCurrentText(translateAction(qry.value(3).toString()));
-            }
+//            else if(conn.getLanguageMode() == "zhTW"){
+//                ui->comboBox_condition3->setCurrentText(translateCondition(qry.value(1).toString()));
+//                ui->lEdit_3->setText(qry.value(2).toString());
+//                ui->comboBox_action3->setCurrentText(translateAction(qry.value(3).toString()));
+//            }
         }
     }
     else{
@@ -227,11 +227,11 @@ void Schedule::readDataFromDatabase()
                 ui->lEdit_4->setText(qry.value(2).toString());
                 ui->comboBox_action4->setCurrentText(qry.value(3).toString());
             }
-            else if(conn.getLanguageMode() == "zhTW"){
-                ui->comboBox_condition4->setCurrentText(translateCondition(qry.value(1).toString()));
-                ui->lEdit_4->setText(qry.value(2).toString());
-                ui->comboBox_action4->setCurrentText(translateAction(qry.value(3).toString()));
-            }
+//            else if(conn.getLanguageMode() == "zhTW"){
+//                ui->comboBox_condition4->setCurrentText(translateCondition(qry.value(1).toString()));
+//                ui->lEdit_4->setText(qry.value(2).toString());
+//                ui->comboBox_action4->setCurrentText(translateAction(qry.value(3).toString()));
+//            }
         }
     }
     else{

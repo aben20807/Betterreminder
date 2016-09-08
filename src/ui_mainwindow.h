@@ -78,6 +78,7 @@ public:
         action_enUS->setAutoRepeat(true);
         action_zhTW = new QAction(MainWindow);
         action_zhTW->setObjectName(QStringLiteral("action_zhTW"));
+        action_zhTW->setEnabled(false);
         action_zhTW->setFont(font);
         action_zhTW->setAutoRepeat(true);
         actionManage = new QAction(MainWindow);

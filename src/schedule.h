@@ -25,7 +25,6 @@ public:
     QString translateCondition(QString condition) const;
     QString translateAction(QString action) const;
 
-
 protected:
     void closeEvent(QCloseEvent *);
 

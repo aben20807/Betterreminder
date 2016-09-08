@@ -27,10 +27,10 @@ QString Battery::getBatteryStatus() const
     QString out = cmdprocess->getOutputOfBatteryStatus();
     switch (out[18].unicode()-48) {
     case 1:
-        return "Battery using";
+        return tr("Battery using");
     case 2:
-        return "AC charging";
+        return tr("AC charging");
     default:
-        return "Error!!";
+        return tr("Error!!");
     }
 }

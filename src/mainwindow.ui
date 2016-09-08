@@ -455,6 +455,9 @@ border: 1px solid black;
    </property>
   </action>
   <action name="action_zhTW">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="text">
     <string>繁體中文</string>
    </property>
